@@ -4,7 +4,7 @@ pipeline {
         stage('GIT Repo') {
             steps {
                 sh 'pwd'
-		checkout([$class: 'GitSCM', branches: [[name: 'refs/remotes/origin/*_test']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/tka4roman/Jenkins']]])
+
             }
         }
 	stage("Build HW") {
