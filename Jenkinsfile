@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('GIT Repo') {
-            steps {
-                sh 'pwd'
-
-            }
-        }
 		stage("Build HW") {
 	    	steps {
 				sh 'pwd'
@@ -21,7 +15,7 @@ pipeline {
 		}
 		stage('Delete workspace dir') {
 			steps {
-			deleteDir()
+			cleanWs()
 			 }
 		}
     }
