@@ -19,9 +19,9 @@ pipeline {
 				sh 'echo "Your commit is: $(git log -1 --pretty=tformat:%h)"'
     	    }
 		}
-		stage('Delete workspace dirs') {
+		stage('Delete workspace dir') {
 			steps {
-			deleteDir('workspace/*)
+			deleteDir()
 			 }
 		}
     }
