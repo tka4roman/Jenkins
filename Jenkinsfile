@@ -1,14 +1,25 @@
 pipeline {
     agent any
     stages {
-        stage('Hello World!') {
+        stage('GIT Repo') {
             steps {
                 sh 'cd /home/rtk/Documents/JenkinsProj/Jenkins'
                 sh 'git pull'
-                sh './hello.py'
-                sh 'echo "Your commit is: $(git log -1 --pretty=tformat:%h)"'
+                sh 'pwd'
             }
         }
+	stage("Build HW") {
+	    steps {
+		sh 'pwd'
+		sh './hello.py'
+	    }
+	}
+	stage('Report hash') {
+	    steps {
+		sh 'pwd'
+		sh 'echo "Your commit is: $(git log -1 --pretty=tformat:%h)"'
+    	    }
+	}
     }
 }
 
