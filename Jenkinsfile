@@ -3,8 +3,6 @@ pipeline {
     stages {
         stage('GIT Repo') {
             steps {
-                sh 'cd /home/rtk/Documents/JenkinsProj/Jenkins'
-                sh 'git pull'
                 sh 'pwd'
             }
         }
